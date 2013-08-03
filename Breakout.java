@@ -158,6 +158,6 @@ public class Breakout extends GraphicsProgram {
 	private GOval ball;
 	private RandomGenerator rgen = RandomGenerator.getInstance();
 	private double vx;
-	private double vy =5;
+	private double vy =50;
 	private int delay=1;
 }
