@@ -62,18 +62,19 @@ public class Breakout extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
-		/* You fill this in, along with any subsidiary methods */
+		setupWall();
 	}
 
 	public void setupWall() {
 		for (int j=0; j<NBRICK_ROWS; j++) //build multiple levels
-		{for (int i=0; i<NBRICKS_PER_ROW; i++) // build single level
-		 {
+		{
+			for (int i=0; i<NBRICKS_PER_ROW; i++) // build single level
+		   {
 			int xcord = BRICK_WIDTH * i;
 			int ycord = BRICK_Y_OFFSET + BRICK_HEIGHT * j;
 			GRect rect = new GRect(xcord, ycord, BRICK_WIDTH, BRICK_HEIGHT);
 		    add(rect);
-		 }
+		   }
 		}
 			
 	}
