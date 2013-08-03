@@ -71,7 +71,7 @@ public class Breakout extends GraphicsProgram {
 			for (int i=0; i<NBRICKS_PER_ROW; i++) // build single level
 		   {
 			int xcord = (BRICK_WIDTH + BRICK_SEP) * i;
-			int ycord = BRICK_Y_OFFSET + BRICK_HEIGHT * j;
+			int ycord = BRICK_Y_OFFSET + (BRICK_HEIGHT + BRICK_SEP)* j;
 			GRect rect = new GRect(xcord, ycord, BRICK_WIDTH, BRICK_HEIGHT);
 			rect.setFilled(true);
 			rect.setFillColor(Color.RED);
