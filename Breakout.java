@@ -93,10 +93,20 @@ public class Breakout extends GraphicsProgram {
 			{
 				vx=-vx;
 			}
-			if ((ball.getY() > HEIGHT-BALL_RADIUS)||ball.getY() <0)
+			if (ball.getY() > HEIGHT-BALL_RADIUS)
 			{
 				vy=-vy;
-			}		
+			}
+			if (ball.getY() <0)
+			{
+				if(chance!=0)
+					{chance--;
+					setupBall();
+					}
+					
+				else
+					add(new GLabel("You lose", WIDTH/2, HEIGHT/2));
+			}
 			
 			pause(delay);
 		}
@@ -186,4 +196,5 @@ public class Breakout extends GraphicsProgram {
 	private double vx;
 	private double vy =2;
 	private int delay=10;
+	private int chance= NTURNS;
 }
