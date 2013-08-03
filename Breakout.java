@@ -71,8 +71,22 @@ public class Breakout extends GraphicsProgram {
 		setupBall();
 		
 		waitForClick();
-		moveBall();
+		while ((ball.getX()+BALL_RADIUS < WIDTH-BALL_RADIUS)&&(ball.getY()+BALL_RADIUS < HEIGHT-BALL_RADIUS))
+		{
+			moveBall();
+			
+			if (ball.getX()+BALL_RADIUS < WIDTH-BALL_RADIUS)
+			{
+				vx=-vx;
+			}
+			else 
+				vy=-vy;
+					
+			pause(delay);
+		}
 	}
+	
+
 	
 	public void mouseMoved(MouseEvent e) {
 		paddle.setLocation(e.getX(), e.getY());
@@ -141,4 +155,5 @@ public class Breakout extends GraphicsProgram {
 	private RandomGenerator rgen = RandomGenerator.getInstance();
 	private double vx;
 	private double vy =1;
+	private int delay;
 }
