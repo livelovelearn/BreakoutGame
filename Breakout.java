@@ -102,6 +102,7 @@ public class Breakout extends GraphicsProgram {
 				if(chance!=0)
 					{chance--;
 					setupBall();
+					waitForClick();
 					}
 					
 				else
