@@ -88,7 +88,7 @@ public class Breakout extends GraphicsProgram {
 			{
 				vy=-vy;
 			}		
-			pause(delay);
+			//pause(delay);
 		}
 		
 	}
