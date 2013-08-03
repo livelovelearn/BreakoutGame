@@ -69,6 +69,10 @@ public class Breakout extends GraphicsProgram {
 		setupWall();
 		setupPaddle();
 	}
+	
+	public void mouseMoved(MouseEvent e) {
+		paddle.setLocation(e.getX(), e.getY());
+	}
 
 	private void setupWall() 
 	{
@@ -109,8 +113,9 @@ public class Breakout extends GraphicsProgram {
 	
 	private void setupPaddle()
 	{
-		GRect paddle = new GRect(0, APPLICATION_HEIGHT-PADDLE_Y_OFFSET-PADDLE_HEIGHT, PADDLE_WIDTH, PADDLE_HEIGHT);
+		paddle = new GRect(0, APPLICATION_HEIGHT-PADDLE_Y_OFFSET-PADDLE_HEIGHT, PADDLE_WIDTH, PADDLE_HEIGHT);
 		paddle.setFilled(true);
 		add(paddle);
 	}
+	GRect paddle;
 }
