@@ -74,10 +74,13 @@ public class Breakout extends GraphicsProgram {
 			int ycord = BRICK_Y_OFFSET + (BRICK_HEIGHT + BRICK_SEP)* j;
 			GRect rect = new GRect(xcord, ycord, BRICK_WIDTH, BRICK_HEIGHT);
 			rect.setFilled(true);
-			rect.setFillColor(Color.RED);
+			switch (j%10){
+						case 1: rect.setFillColor(Color.RED);
+						break;
+						}
 		    add(rect);
 		   }
 		}
 			
-	}
+	
 }
