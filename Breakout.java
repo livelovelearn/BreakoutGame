@@ -157,5 +157,5 @@ public class Breakout extends GraphicsProgram {
 	private RandomGenerator rgen = RandomGenerator.getInstance();
 	private double vx;
 	private double vy =1;
-	private int delay=30;
+	private int delay=5;
 }
