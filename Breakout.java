@@ -68,6 +68,7 @@ public class Breakout extends GraphicsProgram {
 	public void run() {
 		setupWall();
 		setupPaddle();
+		setupBall();
 	}
 	
 	public void mouseMoved(MouseEvent e) {
@@ -117,5 +118,13 @@ public class Breakout extends GraphicsProgram {
 		paddle.setFilled(true);
 		add(paddle);
 	}
-	GRect paddle;
+	
+	private void setupBall()
+	{
+		ball = new GOval(WIDTH/2, HEIGHT/2, BALL_RADIUS, BALL_RADIUS);
+		ball.setFilled(true);
+		add(ball);
+	}
+	private GRect paddle;
+	private GOval ball;
 }
