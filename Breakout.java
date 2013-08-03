@@ -69,6 +69,8 @@ public class Breakout extends GraphicsProgram {
 		setupWall();
 		setupPaddle();
 		setupBall();
+		
+		waitForClick();
 		moveBall();
 	}
 	
