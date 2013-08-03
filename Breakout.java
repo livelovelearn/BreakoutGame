@@ -32,7 +32,7 @@ public class Breakout extends GraphicsProgram {
 	private static final int PADDLE_HEIGHT = 10;
 
 /** Offset of the paddle up from the bottom */
-	private static final int PADDLE_Y_OFFSET = 30;
+	private static final int  PADDLE_Y_OFFSET = 30;
 
 /** Number of bricks per row */
 	private static final int NBRICKS_PER_ROW = 10;
@@ -58,14 +58,19 @@ public class Breakout extends GraphicsProgram {
 
 /** Number of turns */
 	private static final int NTURNS = 3;
+	
+	public void init() {
+		addMouseListeners();
+	}
 
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
 		setupWall();
+		setupPaddle();
 	}
 
-	public void setupWall() 
+	private void setupWall() 
 	{
 		for (int j=0; j<NBRICK_ROWS; j++) //build multiple levels
 		{
@@ -92,16 +97,20 @@ public class Breakout extends GraphicsProgram {
 						break;
 						case 7: rect.setFillColor(Color.GREEN);
 						break;
-						case 8: rect.setFillColor(Color.BLUE);
+						case 8: rect.setFillColor(Color.CYAN);
 						break;
-						case 9: rect.setFillColor(Color.BLUE);
+						case 9: rect.setFillColor(Color.CYAN);
 						break;
-					
 						}
 		    add(rect);
 		   }
 		}
-			
+	}	
 	
-    }
+	private void setupPaddle()
+	{
+		GRect paddle = new GRect(0, APPLICATION_HEIGHT-PADDLE_Y_OFFSET, PADDLE_WIDTH, PADDLE_HEIGHT);
+		paddle.setFilled(true);
+		add(paddle);
+	}
 }
