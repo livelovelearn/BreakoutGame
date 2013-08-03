@@ -93,11 +93,11 @@ public class Breakout extends GraphicsProgram {
 			{
 				vx=-vx;
 			}
-			if (ball.getY() > HEIGHT-BALL_RADIUS)
+			if (ball.getY()<0)
 			{
 				vy=-vy;
 			}
-			if (ball.getY() <0)
+			if (ball.getY() > HEIGHT-BALL_RADIUS)
 			{
 				if(chance!=0)
 					{chance--;
