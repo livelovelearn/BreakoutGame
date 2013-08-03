@@ -76,8 +76,27 @@ public class Breakout extends GraphicsProgram {
 			GRect rect = new GRect(xcord, ycord, BRICK_WIDTH, BRICK_HEIGHT);
 			rect.setFilled(true);
 			switch (j%10){
+						case 0: rect.setFillColor(Color.RED);
+						break;
 						case 1: rect.setFillColor(Color.RED);
 						break;
+						case 2: rect.setFillColor(Color.ORANGE);
+						break;
+						case 3: rect.setFillColor(Color.ORANGE);
+						break;
+						case 4: rect.setFillColor(Color.YELLOW);
+						break;
+						case 1: rect.setFillColor(Color.YELLOW);
+						break;
+						case 1: rect.setFillColor(Color.GREEN);
+						break;
+						case 1: rect.setFillColor(Color.GREEN);
+						break;
+						case 1: rect.setFillColor(Color.BLUE);
+						break;
+						case 1: rect.setFillColor(Color.BLUE);
+						break;
+					
 						}
 		    add(rect);
 		   }
