@@ -79,12 +79,16 @@ public class Breakout extends GraphicsProgram {
 		while (true)
 		{
 			moveBall();
-			
-			if ((getElementAt(ball.getX(), ball.getY()))!=null)
+			GObject collider = getCollidingObject();
+			if (collider == paddle)//can use == here?
+			{
 				vy=-vy;
-					
-					
-			
+			}
+			else if (collider != null)
+			{
+				vy=-vy;
+				remove(collider);
+			}
 			if ((ball.getX() > WIDTH-BALL_RADIUS)||ball.getX() <0)
 			{
 				vx=-vx;
@@ -93,6 +97,7 @@ public class Breakout extends GraphicsProgram {
 			{
 				vy=-vy;
 			}		
+			
 			pause(delay);
 		}
 		
@@ -159,6 +164,20 @@ public class Breakout extends GraphicsProgram {
 	
 	private void moveBall() {
 		ball.move(vx, vy);
+	}
+	
+	private GObject getCollidingObject()
+	{
+		GObject ob = null;
+		if (getElementAt(ball.getX(), ball.getY())!=null)
+			ob=getElementAt(ball.getX(), ball.getY());
+		if (getElementAt(ball.getX()+2*BALL_RADIUS, ball.getY())!=null)
+			ob=getElementAt(ball.getX()+2*BALL_RADIUS, ball.getY());
+		if (getElementAt(ball.getX(), ball.getY()+2*BALL_RADIUS)!=null)
+			ob=getElementAt(ball.getX(), ball.getY()+2*BALL_RADIUS);
+		if (getElementAt(ball.getX()+2*BALL_RADIUS, ball.getY()+2*BALL_RADIUS)!=null)
+			ob=getElementAt(ball.getX()+2*BALL_RADIUS, ball.getY()+2*BALL_RADIUS);
+		return ob;
 	}
 	
 	private GRect paddle;
