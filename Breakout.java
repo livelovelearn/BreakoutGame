@@ -80,11 +80,11 @@ public class Breakout extends GraphicsProgram {
 		{
 			moveBall();
 			
-			if (ball.getX()+BALL_RADIUS > WIDTH-BALL_RADIUS)
+			if ((ball.getX() > WIDTH-BALL_RADIUS)&&ball.getX() <0)
 			{
 				vx=-vx;
 			}
-			if (ball.getY()+BALL_RADIUS > HEIGHT-BALL_RADIUS)
+			if ((ball.getY() > HEIGHT-BALL_RADIUS)&&ball.getX() <0)
 			{
 				vy=-vy;
 			}		
