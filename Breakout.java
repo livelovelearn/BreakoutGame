@@ -65,7 +65,8 @@ public class Breakout extends GraphicsProgram {
 		setupWall();
 	}
 
-	public void setupWall() {
+	public void setupWall() 
+	{
 		for (int j=0; j<NBRICK_ROWS; j++) //build multiple levels
 		{
 			for (int i=0; i<NBRICKS_PER_ROW; i++) // build single level
@@ -83,4 +84,5 @@ public class Breakout extends GraphicsProgram {
 		}
 			
 	
+    }
 }
