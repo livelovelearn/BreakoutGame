@@ -86,15 +86,15 @@ public class Breakout extends GraphicsProgram {
 						break;
 						case 4: rect.setFillColor(Color.YELLOW);
 						break;
-						case 1: rect.setFillColor(Color.YELLOW);
+						case 5: rect.setFillColor(Color.YELLOW);
 						break;
-						case 1: rect.setFillColor(Color.GREEN);
+						case 6: rect.setFillColor(Color.GREEN);
 						break;
-						case 1: rect.setFillColor(Color.GREEN);
+						case 7: rect.setFillColor(Color.GREEN);
 						break;
-						case 1: rect.setFillColor(Color.BLUE);
+						case 8: rect.setFillColor(Color.BLUE);
 						break;
-						case 1: rect.setFillColor(Color.BLUE);
+						case 9: rect.setFillColor(Color.BLUE);
 						break;
 					
 						}
