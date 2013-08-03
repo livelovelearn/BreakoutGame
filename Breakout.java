@@ -200,5 +200,5 @@ public class Breakout extends GraphicsProgram {
 	private double vx;
 	private double vy =2;
 	private int delay=15;
-	private int chance= NTURNS;
+	private int chance= NTURNS-1;
 }
