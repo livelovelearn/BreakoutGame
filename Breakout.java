@@ -69,6 +69,7 @@ public class Breakout extends GraphicsProgram {
 		setupWall();
 		setupPaddle();
 		setupBall();
+		moveBall();
 	}
 	
 	public void mouseMoved(MouseEvent e) {
@@ -121,10 +122,21 @@ public class Breakout extends GraphicsProgram {
 	
 	private void setupBall()
 	{
-		ball = new GOval(WIDTH/2, HEIGHT/2, BALL_RADIUS, BALL_RADIUS);
+		ball = new GOval(WIDTH/2-BALL_RADIUS/2, HEIGHT/2+BALL_RADIUS/2, BALL_RADIUS, BALL_RADIUS);
 		ball.setFilled(true);
 		add(ball);
 	}
+	
+	private void moveBall() {
+		vx = rgen.nextDouble (1.0, 3.0);
+		if (rgen.nextBoolean(0.5))
+			vx=-vx;
+		ball.move(vx, vy);
+	}
+	
 	private GRect paddle;
 	private GOval ball;
+	private RandomGenerator rgen = RandomGenerator.getInstance();
+	private double vx;
+	private double vy =10;
 }
